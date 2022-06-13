@@ -4,6 +4,7 @@ import "./Counter.css";
 export default function Counter(props) {
   const [counter, setCounter] = useState(props.initialBalance);
   //   const [player, setPlayer] = useState(player);
+  const [status, setStatus] = useState(false);
   const [message, setMessage] = useState(`Balance ${props.player}`);
 
   const increase = () => {
@@ -12,7 +13,7 @@ export default function Counter(props) {
 
   const decrease = () => {
     if (counter - props.amount <= 0) {
-      setMessage("Perdiste");
+      setStatus(true);
       setCounter((count) => count - props.amount);
     } else {
       setCounter((count) => count - props.amount);
@@ -25,19 +26,29 @@ export default function Counter(props) {
   };
 
   return (
-    <div className="counter" style={{ background: props.color }}>
-      <div className="div1">
-        <h2>{message}</h2>
-        <span>puede ganar o perder entre {props.range}</span>
-      </div>
-      <span className="div2">{counter}</span>
+    <>
+      {status ? (
+        <div className="container">
+          <h2>Perdiste la partida!</h2>
+          <p>Para empezar una nueva partida, por favor usa el siguiente boton</p>
+          <button onClick={() => window.location.reload(false)} className="btn-perder">Game Over!</button>
+        </div>
+      ) : (
+        <div className="counter" style={{ background: props.color }}>
+          <div className="div1">
+            <h2>{message}</h2>
+            <span>puede ganar o perder entre {props.range}</span>
+          </div>
+          <span className="div2">{counter}</span>
 
-      <button className="div3" onClick={increase}>
-        +
-      </button>
-      <button className="div4" onClick={decrease}>
-        -
-      </button>
-    </div>
+          <button className="div3" onClick={increase}>
+            +
+          </button>
+          <button className="div4" onClick={decrease}>
+            -
+          </button>
+        </div>
+      )}
+    </>
   );
 }

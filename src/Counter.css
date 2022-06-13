@@ -26,3 +26,13 @@
   grid-area: 3 / 2 / 4 / 3;
   font-size: 44px;
 }
+
+.container {
+  margin: auto;
+}
+
+.container > button {
+  font-size: 44px;
+  margin-top: 20px;
+  padding: 20px;
+}
