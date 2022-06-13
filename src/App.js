@@ -12,9 +12,13 @@ function App() {
   const increase = () => {
     setCount((count) => count + 1);
   };
+
+  const decrease = () => {
+    setCount((count) => count - 1);
+  }
   const messages = [
     <>
-      <h3>Descripcion del Juego</h3>
+      <h3>Descripción del Juego</h3>
       <p>
         El mundo es amenazado por una pandemia que arrasa con todo a su paso. La
         propagación del virus COVID-19 ha puesto en alerta a todos los países,
@@ -47,7 +51,7 @@ function App() {
         jugadores ganar o perder dinero debido a algún suceso que haya ocurrido,
         dependiendo de cuál saquen ganarán o perderán un monto aleatorio.
       </p>
-      <button onClick={increase}>Continuar</button>
+      <div className="btn-container"><button onClick={decrease}>Regresar</button><button onClick={increase}>Continuar</button></div>
     </>,
     <>
       <h3>Reglas del Juego</h3>
@@ -64,7 +68,7 @@ function App() {
         <li>
           Se establecen máximos y mínimos de ganancia o pérdida de dinero para
           cada jugador. Por ejemplo, el jugador Trabajador, puede perder o ganar
-          dinero hasta $18.000.000.
+          dinero hasta $4.250.000.
         </li>
         <li>
           Se pueden usar como máximo 2 cartas de poder por jugador por
@@ -90,7 +94,7 @@ function App() {
           no se pueden volver a usar)
         </li>
       </ol>
-      <button onClick={increase}>Continuar</button>
+      <div className="btn-container"><button onClick={decrease}>Regresar</button><button onClick={increase}>Continuar</button></div>
     </>,
     <button onClick={start} className="btn-empezar">Empezar la partida</button>,
   ];
@@ -101,37 +105,37 @@ function App() {
         <div className="App parent">
           <Counter
             player="Gobierno"
-            amount={1000}
-            initialBalance={100000}
-            range="1-30k"
-            color="green"
+            amount={10}
+            initialBalance={850}
+            range="100M"
+            color="#93bf6b"
           ></Counter>
           <Counter
-            player="Aerolinea"
-            amount={1000}
-            initialBalance={80000}
-            range="1-60k"
-            color="red"
+            player="Aerolínea"
+            amount={10}
+            initialBalance={3923}
+            range="890M"
+            color="#c33c25"
           ></Counter>
           <Counter
-            player="Trabajador"
-            amount={1000}
-            initialBalance={10000}
-            range="1-10k"
-            color="yellow"
+            player="Trabajadores"
+            amount={0.5}
+            initialBalance={18}
+            range="4.25M"
+            color="#fd8f45"
           ></Counter>
           <Counter
-            player="Pasajero"
-            amount={1000}
-            initialBalance={20000}
-            range="1-20k"
-            color="orange"
+            player="Pasajeros"
+            amount={0.5}
+            initialBalance={30}
+            range="16M"
+            color="#6e00ae"
           ></Counter>
         </div>
       ) : (
         <div className="App center">
-          <h1>Zeron't</h1>
-          <h2>Decide y sobrevive al COVID-19 para no quedar con $0.</h2>
+          <h1>ZERON'T</h1>
+          <h2>Decide y sobrevive al COVID-19 para no quedar con $0</h2>
           {messages[count]}
         </div>
       )}

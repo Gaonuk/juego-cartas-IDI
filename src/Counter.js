@@ -37,9 +37,9 @@ export default function Counter(props) {
         <div className="counter" style={{ background: props.color }}>
           <div className="div1">
             <h2>{message}</h2>
-            <span>puede ganar o perder entre {props.range}</span>
+            <span>puede ganar o perder hasta {props.range}</span>
           </div>
-          <span className="div2">{counter}</span>
+          <span className="div2">{counter}M</span>
 
           <button className="div3" onClick={increase}>
             +
