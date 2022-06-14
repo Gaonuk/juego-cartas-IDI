@@ -6,17 +6,18 @@ export default function Counter(props) {
   //   const [player, setPlayer] = useState(player);
   const [status, setStatus] = useState(false);
   const [message, setMessage] = useState(`Balance ${props.player}`);
+  const [amount, setAmount] = useState(0);
 
   const increase = () => {
-    setCounter((count) => count + props.amount);
+    setCounter((count) => parseInt(count) + parseInt(amount));
   };
-
+  
   const decrease = () => {
-    if (counter - props.amount <= 0) {
+    if (parseInt(counter) - parseInt(amount)<= 0) {
       setStatus(true);
-      setCounter((count) => count - props.amount);
+      setCounter((count) => parseInt(count) - parseInt(amount));
     } else {
-      setCounter((count) => count - props.amount);
+      setCounter((count) => parseInt(count) - parseInt(amount));
     }
   };
 
@@ -55,7 +56,13 @@ export default function Counter(props) {
           <button className="div3" onClick={increase}>
             +
           </button>
-          <button className="div4" onClick={decrease}>
+          <input
+          type="number" 
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="div4"
+        />
+          <button className="div5" onClick={decrease}>
             -
           </button>
         </div>
