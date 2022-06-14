@@ -30,16 +30,27 @@ export default function Counter(props) {
       {status ? (
         <div className="container">
           <h2>Perdiste la partida!</h2>
-          <p>Para empezar una nueva partida, por favor usa el siguiente boton</p>
-          <button onClick={() => window.location.reload(false)} className="btn-perder">Game Over!</button>
+          <p>
+            Para empezar una nueva partida, por favor usa el siguiente boton
+          </p>
+          <button
+            onClick={() => window.location.reload(false)}
+            className="btn-perder"
+          >
+            Game Over!
+          </button>
         </div>
       ) : (
         <div className="counter" style={{ background: props.color }}>
           <div className="div1">
             <h2>{message}</h2>
-            <span>puede ganar o perder hasta {props.range}</span>
+            <span>Puede ganar o perder hasta {props.range}</span>
           </div>
-          <span className="div2">{counter}M</span>
+          {props.player == "Gobierno" ? (
+            <span className="div2">{counter}MM</span>
+          ) : (
+            <span className="div2">{counter}M</span>
+          )}
 
           <button className="div3" onClick={increase}>
             +

@@ -68,7 +68,7 @@ function App() {
         <li>
           Se establecen máximos y mínimos de ganancia o pérdida de dinero para
           cada jugador. Por ejemplo, el jugador Trabajador, puede perder o ganar
-          dinero hasta $4.250.000.
+          dinero hasta $4.500.000.
         </li>
         <li>
           Se pueden usar como máximo 2 cartas de poder por jugador por
@@ -106,26 +106,26 @@ function App() {
           <Counter
             player="Gobierno"
             amount={10}
-            initialBalance={850}
-            range="100M"
+            initialBalance={900}
+            range="400MM"
             color="#93bf6b"
           ></Counter>
           <Counter
             player="Aerolínea"
-            amount={10}
-            initialBalance={3923}
-            range="890M"
+            amount={1}
+            initialBalance={3200}
+            range="700M"
             color="#c33c25"
           ></Counter>
           <Counter
-            player="Trabajadores"
+            player="Trabajador"
             amount={0.5}
             initialBalance={18}
-            range="4.25M"
+            range="4.5M"
             color="#fd8f45"
           ></Counter>
           <Counter
-            player="Pasajeros"
+            player="Pasajero"
             amount={0.5}
             initialBalance={30}
             range="16M"
