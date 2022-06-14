@@ -11,9 +11,9 @@ export default function Counter(props) {
   const increase = () => {
     setCounter((count) => parseInt(count) + parseInt(amount));
   };
-  
+
   const decrease = () => {
-    if (parseInt(counter) - parseInt(amount)<= 0) {
+    if (parseInt(counter) - parseInt(amount) <= 0) {
       setStatus(true);
       setCounter((count) => parseInt(count) - parseInt(amount));
     } else {
@@ -57,11 +57,11 @@ export default function Counter(props) {
             +
           </button>
           <input
-          type="number" 
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          className="div4"
-        />
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            className="div4"
+          />
           <button className="div5" onClick={decrease}>
             -
           </button>
