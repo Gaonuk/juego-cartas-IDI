@@ -68,7 +68,7 @@ function App() {
         <li>
           Se establecen máximos y mínimos de ganancia o pérdida de dinero para
           cada jugador. Por ejemplo, el jugador Trabajador, puede perder o ganar
-          dinero hasta $4.500.000.
+          dinero hasta $4.5M.
         </li>
         <li>
           Se pueden usar como máximo 2 cartas de poder por jugador por
