@@ -9,15 +9,15 @@ export default function Counter(props) {
   const [amount, setAmount] = useState(0);
 
   const increase = () => {
-    setCounter((count) => parseInt(count) + parseInt(amount));
+    setCounter((count) => parseFloat(count) + parseFloat(amount));
   };
 
   const decrease = () => {
-    if (parseInt(counter) - parseInt(amount) <= 0) {
+    if (parseFloat(counter) - parseFloat(amount) <= 0) {
       setStatus(true);
-      setCounter((count) => parseInt(count) - parseInt(amount));
+      setCounter((count) => parseFloat(count) - parseFloat(amount));
     } else {
-      setCounter((count) => parseInt(count) - parseInt(amount));
+      setCounter((count) => parseFloat(count) - parseFloat(amount));
     }
   };
 
